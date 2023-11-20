@@ -1,77 +1,33 @@
-body {
+body{
+    background: #8d938f;
     margin: 0;
     padding: 0;
-    background-image: url(https://images.wallpaperscraft.ru/image/single/doroga_gory_pasmurno_118709_3840x2400.jpg);
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
 }
 
-.rain {
-    position: relative;
-    width: 100%;
+.container{
     height: 100vh;
-    background-image: url(https://media.geeksforgeeks.org/wp-content/uploads/20200828184719/rain-300x300.png);
-    animation: rain 1s linear infinite;
-    animation-delay: 1s;
+    display: flex;
+    align-items: center;
 }
 
-.rain:before {
-    content: "";
-    position: absolute;
-    top: 0;
+.image{
+    height: 149px;
+    width: 150px;
+    background: url(wizrd.jpg) 0px 0px;
+    animation: play .7s steps(8) infinite,
+               step 7s linear infinite;
     left: 0;
-    width: 50%;
-    height: 50%;
-    background-image: white;
-    animation: lightning 5s linear infinite;
-    opacity: 0;
+    position: absolute;
 }
 
-
-
-@keyframes rain {
-    0% {
-        background-position: 0 0;
-        opacity: 1;
-    }
-
+@keyframes play{
     100% {
-        background-position: 8% 80%;
-        opacity: 1;
+        background-position: -1269px;
     }
 }
 
-@keyframes lightning{
-    0%{
-        opacity: 0;
+@keyframes step {
+    100%{
+        left: 100%;
     }
-
-    11%{
-        opacity: 1;
-    }
-
-    14% {
-        opacity: 0;
-    }
-    20%{
-        background: url(thunder.png);
-        opacity: 0;
-    }
-
-    21% {
-        opacity: .3;
-    }
-
-    24% {
-        top: 0;
-        right: 100;
-        background: url(thunder.png);
-        opacity: 0;
-    }
-
-    104%{
-        opacity: 0;
-    } 
 }
